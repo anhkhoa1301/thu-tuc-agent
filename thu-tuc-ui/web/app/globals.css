@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+}
+
+.prose-chat p {
+  margin: 0.25rem 0;
+}
+.prose-chat ul, .prose-chat ol {
+  padding-left: 1.25rem;
+  margin: 0.25rem 0;
+}
+.prose-chat li {
+  margin: 0.1rem 0;
+}
+.prose-chat strong {
+  font-weight: 600;
+}
+.prose-chat h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.25rem;
+}
+.prose-chat a {
+  color: #1d4ed8;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-chat a:hover {
+  color: #1e40af;
+}

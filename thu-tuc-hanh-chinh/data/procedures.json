@@ -1,0 +1,411 @@
+[
+  {
+    "id": "CCCD-001",
+    "name": "Cấp thẻ Căn cước (Căn cước công dân gắn chip) lần đầu",
+    "category": "Hộ tịch - Cư trú",
+    "agency": "Công an",
+    "documents": [
+      "Giấy khai sinh bản chính hoặc bản sao có công chứng",
+      "Sổ hộ khẩu hoặc giấy tờ xác nhận cư trú hợp lệ",
+      "Ảnh chân dung 3x4 (nếu yêu cầu) — thường chụp trực tiếp tại nơi làm thủ tục"
+    ],
+    "submission_location": "Công an quận/huyện hoặc Công an phường/xã nơi đăng ký hộ khẩu thường trú. Có thể đặt lịch hẹn qua ứng dụng VNeID hoặc Cổng dịch vụ công quốc gia dichvucong.gov.vn.",
+    "processing_time": "Tại cơ quan: 7 ngày làm việc. Qua Cổng dịch vụ công: 15 ngày làm việc.",
+    "fee": "Miễn phí (cấp lần đầu). Cấp lại do hỏng hoặc mất: 70.000 đồng.",
+    "notes": "Từ 01/7/2024, Luật Căn cước 2023 có hiệu lực: thẻ gọi là 'thẻ Căn cước' (không còn 'gắn chip'). Người dưới 14 tuổi cần cha/mẹ hoặc người giám hộ đi cùng. Mang theo giấy tờ gốc để đối chiếu.",
+    "forms": [
+      {
+        "name": "Mẫu CC01 — Tờ khai Căn cước công dân (thuvienphapluat.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/bieu-mau/33779/mau-to-khai-cap-the-can-cuoc-cong-dan-moi-nhat-2021",
+        "description": "Tải mẫu CC01 (file Word/PDF) và hướng dẫn điền chi tiết tại Thư viện Pháp luật"
+      },
+      {
+        "name": "Mẫu CC01 — Tờ khai Căn cước công dân (luatvietnam.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-to-khai-can-cuoc-cong-dan-mau-cc01-571-19978-article.html",
+        "description": "Tải mẫu CC01 kèm hướng dẫn cách điền từng mục tại Luật Việt Nam"
+      },
+      {
+        "name": "Thủ tục làm thẻ Căn cước từ 01/7/2024 (Luật Căn cước mới)",
+        "type": "Hướng dẫn",
+        "url": "https://luatvietnam.vn/hanh-chinh/thu-tuc-lam-the-can-cuoc-tu-01-7-2024-570-97627-article.html",
+        "description": "Hướng dẫn đầy đủ hồ sơ, trình tự làm thẻ Căn cước theo Luật Căn cước 2023 (hiệu lực từ 01/7/2024)"
+      },
+      {
+        "name": "Đặt lịch hẹn làm Căn cước qua ứng dụng VNeID",
+        "type": "Hướng dẫn",
+        "url": "https://vneid.gov.vn",
+        "description": "Đặt lịch hẹn trực tuyến và tra cứu thông tin cư trú qua ứng dụng VNeID (Bộ Công an)"
+      }
+    ]
+  },
+  {
+    "id": "GPLX-001",
+    "name": "Cấp giấy phép lái xe ô tô hạng B1 lần đầu",
+    "category": "Giao thông vận tải",
+    "agency": "Sở Giao thông Vận tải",
+    "documents": [
+      "Đơn đề nghị đào tạo, sát hạch cấp giấy phép lái xe (theo mẫu)",
+      "Bản sao CCCD/CMND còn hiệu lực",
+      "Giấy khám sức khỏe của cơ sở y tế được phép (trong vòng 6 tháng)",
+      "2 ảnh 3x4 nền trắng",
+      "Học bạ lái xe từ cơ sở đào tạo (sau khi hoàn thành khóa học)"
+    ],
+    "submission_location": "Trung tâm đào tạo, sát hạch lái xe được Sở GTVT cấp phép. Nộp hồ sơ tại cơ sở đào tạo nơi bạn đăng ký học.",
+    "processing_time": "Sau khi thi đậu: 5–10 ngày làm việc để nhận bằng.",
+    "fee": "Lệ phí sát hạch lý thuyết: 90.000 đồng. Lệ phí sát hạch thực hành: 300.000 đồng. Học phí khóa học: tùy cơ sở (thường 5–8 triệu đồng).",
+    "notes": "Điều kiện: từ đủ 18 tuổi. Phải hoàn thành đủ số giờ học lý thuyết (90 giờ) và thực hành (420 giờ) theo quy định.",
+    "forms": [
+      {
+        "name": "Đơn đề nghị sát hạch cấp GPLX (Mẫu 3) — thuvienphapluat.vn",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Thong-tu-12-2017-TT-BGTVT-dao-tao-sat-hach-cap-giay-phep-lai-xe-co-gioi-duong-bo-346753.aspx",
+        "description": "Tải biểu mẫu Mẫu 3 (đơn đề nghị sát hạch) từ Thông tư 12/2017/TT-BGTVT tại Thư viện Pháp luật"
+      },
+      {
+        "name": "Thông tư 12/2017/TT-BGTVT về đào tạo, sát hạch GPLX",
+        "type": "Văn bản pháp lý",
+        "url": "https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Thong-tu-12-2017-TT-BGTVT-dao-tao-sat-hach-cap-giay-phep-lai-xe-co-gioi-duong-bo-346753.aspx",
+        "description": "Quy định về đào tạo, sát hạch, cấp giấy phép lái xe cơ giới đường bộ"
+      }
+    ]
+  },
+  {
+    "id": "DKKD-001",
+    "name": "Đăng ký thành lập hộ kinh doanh",
+    "category": "Doanh nghiệp - Kinh doanh",
+    "agency": "Phòng Tài chính - Kế hoạch cấp huyện",
+    "documents": [
+      "Giấy đề nghị đăng ký hộ kinh doanh (theo mẫu Thông tư 68/2025/TT-BTC hoặc Thông tư 02/2023/TT-BKHĐT)",
+      "Bản sao CCCD/CMND của chủ hộ kinh doanh",
+      "Bản sao giấy tờ chứng minh địa điểm kinh doanh (hợp đồng thuê mặt bằng hoặc sổ đỏ)"
+    ],
+    "submission_location": "Phòng Tài chính - Kế hoạch của UBND cấp huyện/quận nơi đặt địa điểm kinh doanh. Có thể nộp online tại dangkykinhdoanh.gov.vn.",
+    "processing_time": "3 ngày làm việc kể từ ngày nhận đủ hồ sơ hợp lệ.",
+    "fee": "Lệ phí đăng ký: 100.000 đồng/lần.",
+    "notes": "Một cá nhân chỉ được đăng ký một hộ kinh doanh. Hộ kinh doanh không cần con dấu nhưng phải treo bảng hiệu tại địa điểm kinh doanh.",
+    "forms": [
+      {
+        "name": "Giấy đề nghị đăng ký hộ kinh doanh — luatvietnam.vn",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-giay-de-nghi-dang-ky-ho-kinh-doanh-2019-571-19489-article.html",
+        "description": "Tải mẫu giấy đề nghị đăng ký hộ kinh doanh mới nhất (Thông tư 68/2025/TT-BTC) tại Luật Việt Nam"
+      },
+      {
+        "name": "Tổng hợp biểu mẫu đăng ký hộ kinh doanh theo Thông tư 68/2025/TT-BTC",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/tong-hop-bieu-mau-dang-ky-ho-kinh-doanh-theo-thong-tu-68-2025-tt-btc-571-103037-article.html",
+        "description": "Tổng hợp tất cả biểu mẫu đăng ký hộ kinh doanh áp dụng từ 01/7/2025 tại Luật Việt Nam"
+      },
+      {
+        "name": "Giấy đề nghị đăng ký hộ kinh doanh (Phụ lục III-1) — dangkykinhdoanh.gov.vn",
+        "type": "Biểu mẫu",
+        "url": "https://dangkykinhdoanh.gov.vn/vn/tin-tuc/597/4989/bieu-mau-dang-ky-ho-kinh-doanh.aspx",
+        "description": "Biểu mẫu tại Cổng đăng ký kinh doanh quốc gia"
+      },
+      {
+        "name": "Thông tư 02/2023/TT-BKHĐT hướng dẫn đăng ký hộ kinh doanh",
+        "type": "Văn bản pháp lý",
+        "url": "https://thuvienphapluat.vn/van-ban/Doanh-nghiep/Thong-tu-02-2023-TT-BKHDT-huong-dan-Luat-Doanh-nghiep-2020-ve-dang-ky-doanh-nghiep-562041.aspx",
+        "description": "Văn bản quy định chi tiết về đăng ký hộ kinh doanh tại Thư viện Pháp luật"
+      }
+    ]
+  },
+  {
+    "id": "HKTT-001",
+    "name": "Đăng ký thường trú (nhập hộ khẩu)",
+    "category": "Hộ tịch - Cư trú",
+    "agency": "Công an",
+    "documents": [
+      "Tờ khai thay đổi thông tin cư trú (Mẫu CT01) hoặc đăng ký trực tuyến qua VNeID",
+      "Bản sao CCCD/Thẻ căn cước của người đăng ký",
+      "Giấy tờ chứng minh quyền sở hữu hoặc sử dụng chỗ ở hợp pháp (sổ đỏ, hợp đồng mua bán, hợp đồng thuê nhà từ 12 tháng trở lên có công chứng)"
+    ],
+    "submission_location": "Công an phường/xã/thị trấn nơi muốn đăng ký thường trú. Có thể nộp online qua ứng dụng VNeID hoặc Cổng dịch vụ công quốc gia dichvucong.gov.vn.",
+    "processing_time": "7 ngày làm việc.",
+    "fee": "Miễn phí.",
+    "notes": "Theo Luật Cư trú 2020, sổ hộ khẩu giấy đã bị bãi bỏ từ 01/01/2023. Thay thế bằng cơ sở dữ liệu cư trú điện tử. Người dân xác nhận thông tin cư trú bằng Thẻ căn cước hoặc qua ứng dụng VNeID. Mẫu HK01 cũ đã được thay thế bởi mẫu CT01.",
+    "forms": [
+      {
+        "name": "Mẫu CT01 — Tờ khai thay đổi thông tin cư trú mới nhất 2026 (luatvietnam.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-to-khai-thay-doi-thong-tin-cu-tru-moi-nhat-571-102985-article.html",
+        "description": "Tải mẫu CT01 mới nhất (theo Thông tư 53/2025/TT-BCA) và hướng dẫn điền tại Luật Việt Nam"
+      },
+      {
+        "name": "Mẫu CT01 — Tờ khai thay đổi thông tin cư trú (thuvienphapluat.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/phap-luat/tai-mau-ct01-to-khai-thay-doi-thong-tin-cu-tru-moi-nhat-va-cach-viet-mau-to-khai-thay-doi-thong-tin-545913-119804.html",
+        "description": "Tải mẫu CT01 và hướng dẫn cách viết chi tiết tại Thư viện Pháp luật"
+      },
+      {
+        "name": "Hướng dẫn thủ tục đăng ký thường trú từ A-Z",
+        "type": "Hướng dẫn",
+        "url": "https://luatvietnam.vn/hanh-chinh/thu-tuc-dang-ky-thuong-tru-570-28191-article.html",
+        "description": "Hướng dẫn toàn bộ quy trình đăng ký thường trú theo quy định mới nhất tại Luật Việt Nam"
+      },
+      {
+        "name": "Đăng ký thường trú qua ứng dụng VNeID",
+        "type": "Hướng dẫn",
+        "url": "https://vneid.gov.vn",
+        "description": "Đăng ký và quản lý thông tin cư trú điện tử, thay thế sổ hộ khẩu giấy"
+      }
+    ]
+  },
+  {
+    "id": "GCN-001",
+    "name": "Cấp Giấy chứng nhận quyền sử dụng đất (sổ đỏ) lần đầu",
+    "category": "Đất đai - Nhà ở",
+    "agency": "Văn phòng đăng ký đất đai",
+    "documents": [
+      "Đơn đăng ký, cấp Giấy chứng nhận (Mẫu số 04/ĐK — áp dụng từ 01/8/2024 theo Nghị định 101/2024/NĐ-CP)",
+      "Một trong các giấy tờ về quyền sử dụng đất theo Điều 100 Luật Đất đai 2024 (giấy tờ mua bán, thừa kế, tặng cho, v.v.)",
+      "Bản sao CCCD/Thẻ căn cước của người xin cấp",
+      "Bản đồ địa chính hoặc trích đo địa chính thửa đất (Văn phòng đăng ký sẽ hỗ trợ đo vẽ)"
+    ],
+    "submission_location": "Văn phòng đăng ký đất đai cấp tỉnh hoặc chi nhánh cấp huyện nơi có đất. Có thể nộp qua Bộ phận một cửa của UBND cấp huyện.",
+    "processing_time": "30 ngày làm việc với đất đô thị; 40 ngày làm việc với đất nông thôn (không kể thời gian niêm yết, giải quyết tranh chấp).",
+    "fee": "Lệ phí cấp giấy: 100.000 đồng/giấy. Phí đo đạc địa chính: tùy diện tích và địa phương. Phí thẩm định hồ sơ: tùy quy định từng tỉnh.",
+    "notes": "Luật Đất đai 2024 có hiệu lực từ 01/8/2024. Mẫu đơn đăng ký đã cập nhật từ 04a/ĐK sang 04/ĐK. Nếu đất không có giấy tờ theo Điều 100, cần kê khai, xác nhận của UBND cấp xã và xét duyệt theo quy trình đặc biệt.",
+    "forms": [
+      {
+        "name": "Đơn đăng ký đất đai (Mẫu số 04/ĐK) — luatvietnam.vn",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/don-xin-cap-giay-chung-nhan-quyen-su-dung-dat-571-26065-article.html",
+        "description": "Tải mẫu đơn xin cấp GCN quyền sử dụng đất (Mẫu 04/ĐK) mới nhất và hướng dẫn kê khai tại Luật Việt Nam"
+      },
+      {
+        "name": "Hồ sơ, thủ tục cấp GCN quyền sử dụng đất lần đầu",
+        "type": "Hướng dẫn",
+        "url": "https://luatvietnam.vn/dat-dai-nha-o/cap-giay-chung-nhan-quyen-su-dung-dat-lan-dau-567-32437-article.html",
+        "description": "Hướng dẫn đầy đủ hồ sơ, trình tự cấp sổ đỏ lần đầu theo quy định mới nhất tại Luật Việt Nam"
+      },
+      {
+        "name": "Đơn đăng ký đất đai (Mẫu số 04/ĐK) — thuvienphapluat.vn",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/bieu-mau/68663/cach-viet-mau-don-dang-ky-dat-dai-doi-voi-ho-gia-dinh-ca-nhan-mau-so-04-dk",
+        "description": "Tải mẫu 04/ĐK và hướng dẫn kê khai tại Thư viện Pháp luật (Nghị định 101/2024/NĐ-CP)"
+      },
+      {
+        "name": "Luật Đất đai 2024",
+        "type": "Văn bản pháp lý",
+        "url": "https://thuvienphapluat.vn/van-ban/Bat-dong-san/Luat-Dat-dai-2024-so-31-2024-QH15-609936.aspx",
+        "description": "Luật Đất đai hiện hành quy định về cấp GCN quyền sử dụng đất (hiệu lực từ 01/8/2024)"
+      }
+    ]
+  },
+  {
+    "id": "KHAI-SINH-001",
+    "name": "Đăng ký khai sinh",
+    "category": "Hộ tịch - Cư trú",
+    "agency": "UBND cấp xã/phường",
+    "documents": [
+      "Tờ khai đăng ký khai sinh (theo mẫu Thông tư 04/2024/TT-BTP)",
+      "Giấy chứng sinh do cơ sở y tế cấp (hoặc văn bản xác nhận của người làm chứng nếu sinh ngoài cơ sở y tế)",
+      "CCCD/Thẻ căn cước của cha và mẹ",
+      "Giấy đăng ký kết hôn của cha mẹ (nếu có)"
+    ],
+    "submission_location": "UBND phường/xã/thị trấn nơi trẻ sinh ra hoặc nơi cư trú của cha/mẹ. Có thể đăng ký online qua Cổng dịch vụ công quốc gia dichvucong.gov.vn.",
+    "processing_time": "Ngay trong ngày hoặc không quá 3 ngày làm việc nếu cần xác minh.",
+    "fee": "Miễn phí.",
+    "notes": "Phải đăng ký trong vòng 60 ngày kể từ ngày sinh. Đăng ký quá hạn cần thêm văn bản xác nhận. Trẻ em được cấp số định danh cá nhân ngay khi đăng ký khai sinh. Theo Nghị định 63/2024/NĐ-CP, có thể liên thông đồng thời: đăng ký khai sinh + thường trú + cấp thẻ BHYT cho trẻ dưới 6 tuổi.",
+    "forms": [
+      {
+        "name": "Tờ khai đăng ký khai sinh mới nhất 2026 (luatvietnam.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-to-khai-dang-ky-khai-sinh-571-26974-article.html",
+        "description": "Tải tờ khai đăng ký khai sinh mới nhất đang áp dụng năm 2026 tại Luật Việt Nam"
+      },
+      {
+        "name": "Tờ khai đăng ký khai sinh (Thông tư 04/2024/TT-BTP) — thuvienphapluat.vn",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/bieu-mau/65285/mau-to-khai-dang-ky-khai-sinh-moi-nhat-thong-tu-04-2024-tt-btp",
+        "description": "Tải tờ khai đăng ký khai sinh theo Thông tư 04/2024/TT-BTP và hướng dẫn điền chi tiết"
+      },
+      {
+        "name": "Thủ tục liên thông: Khai sinh + Thường trú + Thẻ BHYT (trẻ dưới 6 tuổi)",
+        "type": "Hướng dẫn",
+        "url": "https://luatvietnam.vn/hanh-chinh/huong-dan-thu-tuc-lien-thong-dang-ky-khai-sinh-thuong-tru-570-94662-article.html",
+        "description": "Hướng dẫn làm 3 thủ tục cùng lúc cho trẻ sơ sinh theo Nghị định 63/2024/NĐ-CP tại Luật Việt Nam"
+      },
+      {
+        "name": "Nghị định 123/2015/NĐ-CP về đăng ký hộ tịch",
+        "type": "Văn bản pháp lý",
+        "url": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Nghi-dinh-123-2015-ND-CP-huong-dan-Luat-Ho-tich-293140.aspx",
+        "description": "Quy định chi tiết về đăng ký khai sinh và các thủ tục hộ tịch"
+      }
+    ]
+  },
+  {
+    "id": "KHAI-TU-001",
+    "name": "Đăng ký khai tử",
+    "category": "Hộ tịch - Cư trú",
+    "agency": "UBND cấp xã/phường",
+    "documents": [
+      "Tờ khai đăng ký khai tử (theo mẫu Thông tư 04/2024/TT-BTP)",
+      "Giấy báo tử của cơ sở y tế hoặc văn bản xác nhận của cơ quan có thẩm quyền",
+      "CCCD/Thẻ căn cước của người đi đăng ký"
+    ],
+    "submission_location": "UBND phường/xã/thị trấn nơi người chết cư trú hoặc nơi người chết tử vong.",
+    "processing_time": "Ngay trong ngày.",
+    "fee": "Miễn phí.",
+    "notes": "Phải đăng ký trong vòng 15 ngày kể từ ngày chết. Theo Nghị định 63/2024/NĐ-CP, có thể làm liên thông đồng thời: đăng ký khai tử + xóa đăng ký thường trú + giải quyết tử tuất. Sau khi có Giấy chứng tử mới tiến hành các thủ tục thừa kế.",
+    "forms": [
+      {
+        "name": "Tờ khai đăng ký khai tử — luatvietnam.vn",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-to-khai-dang-ky-khai-tu-571-19558-article.html",
+        "description": "Tải tờ khai đăng ký khai tử và hướng dẫn điền chi tiết tại Luật Việt Nam"
+      },
+      {
+        "name": "Tờ khai đăng ký khai tử (Thông tư 04/2024/TT-BTP) — thuvienphapluat.vn",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/phap-luat/mau-to-khai-dang-ky-khai-tu-theo-quy-dinh-moi-nhat-la-mau-nao-co-the-tai-ve-o-dau-huong-dan-ghi-chi-435068-172568.html",
+        "description": "Tải tờ khai khai tử mới nhất và hướng dẫn điền từng mục tại Thư viện Pháp luật"
+      },
+      {
+        "name": "Thủ tục liên thông: Khai tử + Xóa thường trú + Tử tuất",
+        "type": "Hướng dẫn",
+        "url": "https://luatvietnam.vn/hanh-chinh/thu-tuc-lien-thong-dang-ky-khai-tu-xoa-thuong-tru-570-99794-article.html",
+        "description": "Hướng dẫn làm 3 thủ tục liên thông sau khi có người thân qua đời theo Nghị định 63/2024/NĐ-CP"
+      }
+    ]
+  },
+  {
+    "id": "DANGKY-KH-001",
+    "name": "Đăng ký kết hôn",
+    "category": "Hộ tịch - Cư trú",
+    "agency": "UBND cấp xã/phường",
+    "documents": [
+      "Tờ khai đăng ký kết hôn (theo mẫu Thông tư 04/2024/TT-BTP)",
+      "CCCD/Thẻ căn cước còn hiệu lực của cả hai bên",
+      "Giấy xác nhận tình trạng hôn nhân (do UBND nơi cư trú cấp, cấp không quá 6 tháng trước ngày nộp hồ sơ)",
+      "Giấy khám sức khỏe (một số trường hợp có thể yêu cầu)"
+    ],
+    "submission_location": "UBND phường/xã/thị trấn nơi cư trú của một trong hai bên (ưu tiên nơi đăng ký thường trú). Có thể nộp online tại Cổng dịch vụ công quốc gia.",
+    "processing_time": "3 ngày làm việc.",
+    "fee": "Miễn phí (đăng ký trong nước). Kết hôn có yếu tố nước ngoài: 1.500.000 đồng.",
+    "notes": "Cả hai bên phải có mặt tại thời điểm đăng ký để ký Giấy chứng nhận kết hôn. Điều kiện: từ đủ 18 tuổi (nữ) và 20 tuổi (nam), tự nguyện, không thuộc các trường hợp cấm theo Luật Hôn nhân và Gia đình 2014.",
+    "forms": [
+      {
+        "name": "Tờ khai đăng ký kết hôn + hướng dẫn điền (luatvietnam.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-to-khai-dang-ky-ket-hon-230-19671-article.html",
+        "description": "Tải tờ khai đăng ký kết hôn và xem hướng dẫn cách ghi chuẩn từng mục tại Luật Việt Nam"
+      },
+      {
+        "name": "Thủ tục đăng ký kết hôn mới nhất: hồ sơ, trình tự",
+        "type": "Hướng dẫn",
+        "url": "https://luatvietnam.vn/dan-su/thu-tuc-dang-ky-ket-hon-moi-nhat-568-17676-article.html",
+        "description": "Hướng dẫn đầy đủ hồ sơ và quy trình đăng ký kết hôn mới nhất tại Luật Việt Nam"
+      },
+      {
+        "name": "Tờ khai đăng ký kết hôn (Thông tư 04/2024/TT-BTP) — thuvienphapluat.vn",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/bieu-mau/65280/mau-to-khai-dang-ky-ket-hon-moi-nhat-thong-tu-04-2024-tt-btp",
+        "description": "Tải tờ khai kết hôn mới nhất theo Thông tư 04/2024/TT-BTP tại Thư viện Pháp luật"
+      },
+      {
+        "name": "Tải trực tiếp file Word tờ khai đăng ký kết hôn",
+        "type": "Biểu mẫu",
+        "url": "https://cdn.thuvienphapluat.vn/uploads/phapluat/2022-2/MH/to-khai-dang-ky-ket-hon.docx",
+        "description": "File .docx tờ khai đăng ký kết hôn — tải về và điền trước khi nộp"
+      },
+      {
+        "name": "Luật Hôn nhân và Gia đình 2014",
+        "type": "Văn bản pháp lý",
+        "url": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Luat-hon-nhan-va-gia-dinh-2014-238640.aspx",
+        "description": "Quy định về điều kiện và thủ tục đăng ký kết hôn"
+      }
+    ]
+  },
+  {
+    "id": "BHYT-001",
+    "name": "Cấp thẻ Bảo hiểm y tế hộ gia đình",
+    "category": "Bảo hiểm - Y tế",
+    "agency": "Cơ quan Bảo hiểm xã hội",
+    "documents": [
+      "Tờ khai tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS)",
+      "Bản sao CCCD/Thẻ căn cước của tất cả thành viên đăng ký",
+      "Sổ hộ khẩu hoặc giấy xác nhận quan hệ gia đình"
+    ],
+    "submission_location": "Cơ quan Bảo hiểm xã hội quận/huyện nơi cư trú. Hoặc qua đại lý thu BHYT tại UBND phường/xã. Đăng ký online tại baohiemxahoi.gov.vn hoặc ứng dụng VssID.",
+    "processing_time": "5–7 ngày làm việc kể từ ngày đóng phí.",
+    "fee": "Mức đóng: 4,5% mức lương cơ sở/tháng/người (năm 2025: ~94.050 đồng/người/tháng). Hộ gia đình được giảm: người thứ 2 giảm 70%, người thứ 3 giảm 60%, người thứ 4 giảm 50%, từ người thứ 5 giảm 40%.",
+    "notes": "Thẻ BHYT có hiệu lực sau 30 ngày kể từ ngày đóng phí lần đầu (trừ trường hợp tai nạn). Có thể chọn cơ sở khám bệnh ban đầu trong danh sách được BHYT phê duyệt.",
+    "forms": [
+      {
+        "name": "Mẫu TK1-TS — Tờ khai tham gia, điều chỉnh BHXH, BHYT (luatvietnam.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-to-khai-tk1-ts-571-20049-article.html",
+        "description": "Tải mẫu TK1-TS mới nhất và hướng dẫn điền chi tiết từng mục tại Luật Việt Nam"
+      },
+      {
+        "name": "Mẫu TK1-TS — Tờ khai tham gia BHXH, BHYT (thuvienphapluat.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/bieu-mau/42421/mau-tk1-ts-to-khai-tham-gia-dieu-chinh-thong-tin-bhxh-bhyt",
+        "description": "Tải mẫu TK1-TS và hướng dẫn điền tại Thư viện Pháp luật"
+      },
+      {
+        "name": "Tải trực tiếp file Word Mẫu TK1-TS",
+        "type": "Biểu mẫu",
+        "url": "https://files.thuvienphapluat.vn/uploads/hopdong/MAU%20TK1-TS-TT-490-QD-BHXH.doc",
+        "description": "File .doc mẫu TK1-TS theo Quyết định 490/QĐ-BHXH — tải về và điền thông tin"
+      },
+      {
+        "name": "Ứng dụng VssID — Đăng ký và quản lý BHYT online",
+        "type": "Hướng dẫn",
+        "url": "https://vssid.baohiemxahoi.gov.vn",
+        "description": "Đăng ký và quản lý BHYT trực tuyến qua ứng dụng VssID của Bảo hiểm xã hội Việt Nam"
+      }
+    ]
+  },
+  {
+    "id": "PASSPORT-001",
+    "name": "Cấp hộ chiếu phổ thông lần đầu",
+    "category": "Xuất nhập cảnh",
+    "agency": "Cục Quản lý xuất nhập cảnh (Bộ Công an)",
+    "documents": [
+      "Tờ khai đề nghị cấp hộ chiếu phổ thông (Mẫu TK01 — từ 01/7/2026 áp dụng mẫu mới theo Thông tư 69/2026/TT-BCA)",
+      "CCCD/Thẻ căn cước gắn chip còn hiệu lực (bắt buộc từ 2023)",
+      "Ảnh 4x6 nền trắng (hoặc chụp trực tiếp tại nơi làm thủ tục)"
+    ],
+    "submission_location": "Cục Quản lý xuất nhập cảnh tại Hà Nội hoặc TP.HCM, hoặc Phòng Quản lý xuất nhập cảnh Công an tỉnh/thành phố. Đặt lịch hẹn và nộp hồ sơ online tại xuatnhapcanh.gov.vn.",
+    "processing_time": "Thông thường: 8 ngày làm việc. Nhanh (giải quyết trong ngày hoặc 1–3 ngày): nộp thêm phí dịch vụ nhanh.",
+    "fee": "200.000 đồng/hộ chiếu (thông thường). Phí giải quyết nhanh: tùy theo thời gian yêu cầu (thêm 200.000–400.000 đồng).",
+    "notes": "Hộ chiếu phổ thông có hiệu lực 10 năm (người từ 14 tuổi) hoặc 5 năm (trẻ dưới 14 tuổi). Từ 01/7/2026, áp dụng 9 mẫu tờ khai hộ chiếu mới theo Thông tư 69/2026/TT-BCA. Người dưới 14 tuổi cần cha/mẹ/người giám hộ đi cùng.",
+    "forms": [
+      {
+        "name": "Tờ khai đề nghị cấp hộ chiếu phổ thông mới nhất (luatvietnam.vn)",
+        "type": "Biểu mẫu",
+        "url": "https://luatvietnam.vn/bieu-mau/mau-to-khai-de-nghi-cap-ho-chieu-pho-thong-o-trong-nuoc-moi-nhat-571-109525-article.html",
+        "description": "Tải tờ khai hộ chiếu phổ thông mới nhất (áp dụng từ 01/7/2026) và hướng dẫn điền tại Luật Việt Nam"
+      },
+      {
+        "name": "Thông báo: Từ 01/7/2026 áp dụng 9 mẫu tờ khai hộ chiếu mới",
+        "type": "Hướng dẫn",
+        "url": "https://luatvietnam.vn/tin-van-ban-moi/chinh-thuc-ap-dung-9-mau-to-khai-ho-chieu-moi-tu-01-7-2026-186-109435-article.html",
+        "description": "Thông tin về các mẫu tờ khai hộ chiếu mới theo Thông tư 69/2026/TT-BCA, chính thức áp dụng từ 01/7/2026"
+      },
+      {
+        "name": "Tờ khai đề nghị cấp hộ chiếu (Mẫu TK01) — thuvienphapluat.vn",
+        "type": "Biểu mẫu",
+        "url": "https://thuvienphapluat.vn/phap-luat/mau-to-khai-lam-ho-chieu-tk01-moi-nhat-2024-tai-mau-to-khai-o-dau-thoi-han-toi-da-cua-ho-chieu-pho--691672-140375.html",
+        "description": "Tải mẫu TK01 và hướng dẫn điền chi tiết tại Thư viện Pháp luật"
+      },
+      {
+        "name": "Đặt lịch hẹn cấp hộ chiếu trực tuyến (xuatnhapcanh.gov.vn)",
+        "type": "Hướng dẫn",
+        "url": "https://xuatnhapcanh.gov.vn/dang-ky-cap-ho-chieu",
+        "description": "Đặt lịch hẹn và nộp tờ khai trực tuyến tại cổng chính thức của Cục Xuất nhập cảnh"
+      },
+      {
+        "name": "Nghị định 136/2007/NĐ-CP về xuất cảnh, nhập cảnh",
+        "type": "Văn bản pháp lý",
+        "url": "https://thuvienphapluat.vn/van-ban/Xuat-nhap-canh/Nghi-dinh-136-2007-ND-CP-xuat-nhap-canh-cong-dan-Viet-Nam-58619.aspx",
+        "description": "Quy định pháp lý về cấp hộ chiếu"
+      }
+    ]
+  }
+]

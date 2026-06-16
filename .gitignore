@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Environment secrets (NEVER commit)
+.env
+.env.*
+!.env.example
+
+# GreenNode AgentBase credentials
+.greennode.json
+*.credentials.json
+.agentbase/
+.agentbase-state.json
+
+# Node / Next.js
+node_modules/
+.next/
+.vercel/
+*.log
+npm-debug.log*
+
+# Mobile
+thu-tuc-ui/mobile/.expo/
+thu-tuc-ui/mobile/node_modules/
+thu-tuc-ui/mobile/.env
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
