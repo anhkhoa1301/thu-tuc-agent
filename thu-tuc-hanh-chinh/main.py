@@ -383,35 +383,49 @@ _UI_HTML = """<!DOCTYPE html>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f5;height:100vh;display:flex;flex-direction:column}
-header{background:#1a56db;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:10px;flex-shrink:0}
-header h1{font-size:16px;font-weight:600}
-header span{font-size:12px;opacity:.8}
-#chat{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
-.msg{max-width:80%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.6}
-.msg.user{background:#1a56db;color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
-.msg.bot{background:#fff;color:#111;align-self:flex-start;border-bottom-left-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
-.msg.bot p{margin:0 0 8px}.msg.bot p:last-child{margin:0}
-.msg.bot ul,.msg.bot ol{padding-left:20px;margin:6px 0}
-.msg.bot a{color:#1a56db}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:#eef0f4;height:100vh;display:flex;flex-direction:column}
+header{background:#1648c8;color:#fff;padding:16px 24px;display:flex;align-items:center;gap:12px;flex-shrink:0;box-shadow:0 2px 8px rgba(22,72,200,.25)}
+header .icon{width:36px;height:36px;background:rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+header h1{font-size:16px;font-weight:600;letter-spacing:-.01em}
+header span{font-size:12px;opacity:.75;margin-top:2px;display:block}
+#chat{flex:1;overflow-y:auto;padding:24px 20px;display:flex;flex-direction:column;gap:20px;scroll-behavior:smooth}
+#chat::-webkit-scrollbar{width:5px}
+#chat::-webkit-scrollbar-track{background:transparent}
+#chat::-webkit-scrollbar-thumb{background:#c9cdd6;border-radius:99px}
+.msg{max-width:78%;padding:14px 18px;border-radius:20px;font-size:14.5px;line-height:1.65}
+.msg.user{background:#1648c8;color:#fff;align-self:flex-end;border-bottom-right-radius:5px}
+.msg.bot{background:#fff;color:#1a1a2e;align-self:flex-start;border-bottom-left-radius:5px;box-shadow:0 1px 4px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.05)}
+.msg.bot p{margin:0 0 10px}.msg.bot p:last-child{margin:0}
+.msg.bot ul,.msg.bot ol{padding-left:22px;margin:8px 0}
+.msg.bot li{margin:4px 0}
+.msg.bot h2,.msg.bot h3{font-size:15px;font-weight:600;margin:14px 0 6px;color:#1a1a2e}
+.msg.bot a{color:#1648c8;text-decoration:underline;text-underline-offset:3px}
 .msg.bot strong{font-weight:600}
-.msg.typing{color:#888;font-style:italic}
-footer{background:#fff;border-top:1px solid #e5e7eb;padding:12px 16px;display:flex;gap:8px;flex-shrink:0}
-#inp{flex:1;padding:10px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none}
-#inp:focus{border-color:#1a56db}
-#btn{background:#1a56db;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;cursor:pointer;font-weight:500}
-#btn:disabled{background:#93c5fd;cursor:not-allowed}
-.suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
-.sug{background:#fff;border:1px solid #d1d5db;border-radius:20px;padding:6px 12px;font-size:12px;cursor:pointer;color:#374151}
-.sug:hover{border-color:#1a56db;color:#1a56db}
-.reply-sugs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;margin-bottom:4px;padding-left:4px;align-self:flex-start;max-width:80%}
-.reply-sug{background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:5px 12px;font-size:12px;cursor:pointer;color:#1d4ed8;transition:background .15s}
-.reply-sug:hover{background:#dbeafe;border-color:#93c5fd}
+.msg.bot code{background:#f3f4f8;padding:2px 6px;border-radius:5px;font-size:13px}
+.msg.typing{color:#9ca3af;font-style:italic;font-size:14px}
+.dot-flashing{display:inline-flex;gap:4px;align-items:center;padding:4px 0}
+.dot-flashing span{width:7px;height:7px;border-radius:50%;background:#9ca3af;animation:blink 1.2s infinite}
+.dot-flashing span:nth-child(2){animation-delay:.2s}
+.dot-flashing span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+footer{background:#fff;border-top:1px solid #e4e6ec;padding:16px 20px;display:flex;gap:10px;flex-shrink:0}
+#inp{flex:1;padding:12px 18px;border:1.5px solid #dde1ea;border-radius:28px;font-size:14px;outline:none;background:#f8f9fc;transition:border-color .2s,box-shadow .2s,background .2s;font-family:inherit}
+#inp:focus{border-color:#1648c8;background:#fff;box-shadow:0 0 0 3px rgba(22,72,200,.1)}
+#btn{background:#1648c8;color:#fff;border:none;padding:12px 24px;border-radius:28px;font-size:14px;cursor:pointer;font-weight:500;transition:background .2s,transform .1s;font-family:inherit;flex-shrink:0}
+#btn:hover:not(:disabled){background:#1340ad}
+#btn:active:not(:disabled){transform:scale(.97)}
+#btn:disabled{background:#93b4f5;cursor:not-allowed}
+.suggestions{display:flex;flex-wrap:wrap;gap:8px;padding:12px 20px 4px}
+.sug{background:#fff;border:1.5px solid #dde1ea;border-radius:22px;padding:8px 16px;font-size:13px;cursor:pointer;color:#4b5563;transition:border-color .15s,color .15s,background .15s;font-family:inherit}
+.sug:hover{border-color:#1648c8;color:#1648c8;background:#f0f4ff}
+.reply-sugs{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;align-self:flex-start;max-width:85%}
+.reply-sug{background:#eef3ff;border:1.5px solid #c7d7fd;border-radius:22px;padding:6px 14px;font-size:12.5px;cursor:pointer;color:#1e40af;transition:background .15s,border-color .15s;font-family:inherit}
+.reply-sug:hover{background:#dce7ff;border-color:#93b4f5}
 </style>
 </head>
 <body>
 <header>
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6M9 16h6M17 2H7a2 2 0 00-2 2v16l4-2 3 2 3-2 4 2V4a2 2 0 00-2-2z"/></svg>
+  <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 12h6M9 16h6M17 2H7a2 2 0 00-2 2v16l4-2 3 2 3-2 4 2V4a2 2 0 00-2-2z"/></svg></div>
   <div><h1>Trợ lý Thủ tục Hành chính</h1><span>Hỏi bằng tiếng Việt tự nhiên</span></div>
 </header>
 <div class="suggestions" id="sugs">
@@ -448,7 +462,7 @@ async function send(){
   document.getElementById('sugs').style.display='none';
   inp.value='';btn.disabled=true;
   addMsg(msg,'user');
-  const typing=addMsg('Đang tra cứu...','bot typing');
+  const typing=addMsg('','bot typing');typing.innerHTML='<div class="dot-flashing"><span></span><span></span><span></span></div>';
   try{
     const r=await fetch('/invocations',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg})});
     const d=await r.json();
