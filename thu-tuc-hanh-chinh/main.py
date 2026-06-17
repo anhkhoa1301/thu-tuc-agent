@@ -379,14 +379,14 @@ _UI_HTML = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trợ lý Thủ tục Hành chính</title>
+<title>Trợ Lý Tra Cứu Thủ Tục Hành Chính Việt Nam</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:#eef0f4;height:100vh;display:flex;flex-direction:column}
 header{background:#1648c8;color:#fff;padding:16px 24px;display:flex;align-items:center;gap:12px;flex-shrink:0;box-shadow:0 2px 8px rgba(22,72,200,.25)}
 header .icon{width:36px;height:36px;background:rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-header h1{font-size:16px;font-weight:600;letter-spacing:-.01em}
+header h1{font-size:14.5px;font-weight:600;letter-spacing:-.01em}
 header span{font-size:12px;opacity:.75;margin-top:2px;display:block}
 #chat{flex:1;overflow-y:auto;padding:24px 20px;display:flex;flex-direction:column;gap:20px;scroll-behavior:smooth}
 #chat::-webkit-scrollbar{width:5px}
@@ -426,7 +426,7 @@ footer{background:#fff;border-top:1px solid #e4e6ec;padding:16px 20px;display:fl
 <body>
 <header>
   <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 12h6M9 16h6M17 2H7a2 2 0 00-2 2v16l4-2 3 2 3-2 4 2V4a2 2 0 00-2-2z"/></svg></div>
-  <div><h1>Trợ lý Thủ tục Hành chính</h1><span>Hỏi bằng tiếng Việt tự nhiên</span></div>
+  <div><h1>Trợ Lý Tra Cứu Thủ Tục Hành Chính Việt Nam</h1><span>Hỏi bằng tiếng Việt tự nhiên</span></div>
 </header>
 <div class="suggestions" id="sugs">
   <span class="sug" onclick="ask(this)">Làm CCCD cần giấy tờ gì?</span>
