@@ -430,6 +430,8 @@ const chat=document.getElementById('chat');
 const inp=document.getElementById('inp');
 const btn=document.getElementById('btn');
 
+marked.use({renderer:{link(href,title,text){return `<a href="${href}"${title?` title="${title}"`:''}  target="_blank" rel="noopener noreferrer">${text}</a>`;}}})
+
 function addMsg(text,role){
   const d=document.createElement('div');
   d.className='msg '+role;
