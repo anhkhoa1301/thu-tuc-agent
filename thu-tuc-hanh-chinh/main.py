@@ -430,7 +430,7 @@ const chat=document.getElementById('chat');
 const inp=document.getElementById('inp');
 const btn=document.getElementById('btn');
 
-marked.use({renderer:{link(href,title,text){return `<a href="${href}"${title?` title="${title}"`:''}  target="_blank" rel="noopener noreferrer">${text}</a>`;}}})
+marked.use({renderer:{link(token){const href=token.href||token;const title=token.title||'';const text=token.text||'';return `<a href="${href}"${title?` title="${title}"`:''}  target="_blank" rel="noopener noreferrer">${text}</a>`;}}})
 
 function addMsg(text,role){
   const d=document.createElement('div');
