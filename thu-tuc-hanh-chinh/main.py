@@ -1,4 +1,5 @@
 import os
+import re
 import json
 from pathlib import Path
 from datetime import datetime
@@ -7,6 +8,8 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
 from langchain_core.tools import tool
+from starlette.requests import Request
+from starlette.responses import HTMLResponse
 
 from greennode_agentbase import (
     GreenNodeAgentBaseApp,
@@ -213,7 +216,10 @@ Quy tắc:
    - dangkykinhdoanh.gov.vn: đăng ký hộ kinh doanh
 7. Trả lời bằng tiếng Việt, rõ ràng, dễ hiểu.
 8. Không tư vấn pháp lý — chỉ cung cấp thông tin thủ tục công khai.
-9. Luôn nhắc người dùng kiểm tra lại với cơ quan có thẩm quyền vì quy định có thể thay đổi."""
+9. Luôn nhắc người dùng kiểm tra lại với cơ quan có thẩm quyền vì quy định có thể thay đổi.
+10. Cuối MỖI câu trả lời (kể cả câu hỏi làm rõ), thêm đúng một dòng theo định dạng sau, không thêm bất kỳ ký tự nào khác:
+[GỢI Ý]: <câu hỏi 1> | <câu hỏi 2> | <câu hỏi 3>
+Yêu cầu: 2-3 gợi ý, mỗi gợi ý liên quan trực tiếp đến thủ tục vừa trả lời, không quá 60 ký tự, viết dưới dạng câu hỏi ngắn gọn."""
 
 # --- Create Agent ---
 agent = create_agent(
@@ -245,10 +251,18 @@ def handler(payload: dict, context: RequestContext) -> dict:
             {"role": "user", "content": message},
         ]}
     )
-    ai_message = result["messages"][-1]
+    raw = result["messages"][-1].content
+
+    suggestions = []
+    match = re.search(r'\[GỢI Ý\]:\s*(.+)$', raw, re.MULTILINE)
+    if match:
+        suggestions = [s.strip() for s in match.group(1).split('|') if s.strip()]
+        raw = raw[:match.start()].strip()
+
     return {
         "status": "success",
-        "response": ai_message.content,
+        "response": raw,
+        "suggestions": suggestions,
         "timestamp": datetime.now().isoformat(),
         "session_id": context.session_id,
     }
@@ -257,6 +271,119 @@ def handler(payload: dict, context: RequestContext) -> dict:
 @app.ping
 def health_check() -> PingStatus:
     return PingStatus.HEALTHY
+
+
+_UI_HTML = """<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trợ lý Thủ tục Hành chính</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f5;height:100vh;display:flex;flex-direction:column}
+header{background:#1a56db;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+header h1{font-size:16px;font-weight:600}
+header span{font-size:12px;opacity:.8}
+#chat{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:80%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.6}
+.msg.user{background:#1a56db;color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
+.msg.bot{background:#fff;color:#111;align-self:flex-start;border-bottom-left-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.msg.bot p{margin:0 0 8px}.msg.bot p:last-child{margin:0}
+.msg.bot ul,.msg.bot ol{padding-left:20px;margin:6px 0}
+.msg.bot a{color:#1a56db}
+.msg.bot strong{font-weight:600}
+.msg.typing{color:#888;font-style:italic}
+footer{background:#fff;border-top:1px solid #e5e7eb;padding:12px 16px;display:flex;gap:8px;flex-shrink:0}
+#inp{flex:1;padding:10px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none}
+#inp:focus{border-color:#1a56db}
+#btn{background:#1a56db;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;cursor:pointer;font-weight:500}
+#btn:disabled{background:#93c5fd;cursor:not-allowed}
+.suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
+.sug{background:#fff;border:1px solid #d1d5db;border-radius:20px;padding:6px 12px;font-size:12px;cursor:pointer;color:#374151}
+.sug:hover{border-color:#1a56db;color:#1a56db}
+.reply-sugs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;margin-bottom:4px;padding-left:4px;align-self:flex-start;max-width:80%}
+.reply-sug{background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:5px 12px;font-size:12px;cursor:pointer;color:#1d4ed8;transition:background .15s}
+.reply-sug:hover{background:#dbeafe;border-color:#93c5fd}
+</style>
+</head>
+<body>
+<header>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6M9 16h6M17 2H7a2 2 0 00-2 2v16l4-2 3 2 3-2 4 2V4a2 2 0 00-2-2z"/></svg>
+  <div><h1>Trợ lý Thủ tục Hành chính</h1><span>Hỏi bằng tiếng Việt tự nhiên</span></div>
+</header>
+<div class="suggestions" id="sugs">
+  <span class="sug" onclick="ask(this)">Làm CCCD cần giấy tờ gì?</span>
+  <span class="sug" onclick="ask(this)">Làm hộ chiếu mất bao lâu?</span>
+  <span class="sug" onclick="ask(this)">Đăng ký kết hôn cần gì?</span>
+  <span class="sug" onclick="ask(this)">Phí làm giấy phép lái xe?</span>
+</div>
+<div id="chat"></div>
+<footer>
+  <input id="inp" type="text" placeholder="Ví dụ: Đăng ký hộ kinh doanh cần hồ sơ gì?" onkeydown="if(event.key==='Enter')send()">
+  <button id="btn" onclick="send()">Gửi</button>
+</footer>
+<script>
+const chat=document.getElementById('chat');
+const inp=document.getElementById('inp');
+const btn=document.getElementById('btn');
+
+function addMsg(text,role){
+  const d=document.createElement('div');
+  d.className='msg '+role;
+  if(role==='bot') d.innerHTML=marked.parse(text);
+  else d.textContent=text;
+  chat.appendChild(d);
+  chat.scrollTop=chat.scrollHeight;
+  return d;
+}
+
+async function send(){
+  const msg=inp.value.trim();
+  if(!msg)return;
+  document.getElementById('sugs').style.display='none';
+  inp.value='';btn.disabled=true;
+  addMsg(msg,'user');
+  const typing=addMsg('Đang tra cứu...','bot typing');
+  try{
+    const r=await fetch('/invocations',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg})});
+    const d=await r.json();
+    typing.className='msg bot';
+    typing.innerHTML=marked.parse(d.response||d.error||'Có lỗi xảy ra.');
+    if(d.suggestions&&d.suggestions.length){
+      const wrap=document.createElement('div');
+      wrap.className='reply-sugs';
+      d.suggestions.forEach(s=>{
+        const b=document.createElement('button');
+        b.className='reply-sug';
+        b.textContent=s;
+        b.onclick=()=>{inp.value=s;send();};
+        wrap.appendChild(b);
+      });
+      chat.appendChild(wrap);
+    }
+  }catch(e){
+    typing.className='msg bot';
+    typing.textContent='Không thể kết nối đến máy chủ. Vui lòng thử lại.';
+  }
+  btn.disabled=false;
+  inp.focus();
+  chat.scrollTop=chat.scrollHeight;
+}
+
+function ask(el){inp.value=el.textContent;send();}
+inp.focus();
+</script>
+</body>
+</html>"""
+
+
+async def _ui(request: Request) -> HTMLResponse:
+    return HTMLResponse(content=_UI_HTML)
+
+
+app.add_route("/", _ui, methods=["GET"])
 
 
 if __name__ == "__main__":
