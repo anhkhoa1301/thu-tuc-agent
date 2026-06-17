@@ -310,11 +310,11 @@ Quy tắc:
 Phone : 0938432601
 Email : khoana10@vng.com.vn"
 11. QUY TRÌNH XỬ LÝ MỖI CÂU HỎI (bắt buộc theo thứ tự):
-    a. LUÔN gọi recall_from_memory với nội dung câu hỏi — để kiểm tra bộ nhớ có câu trả lời phù hợp không.
-    b. Nếu recall_from_memory trả về kết quả có score ≥ 0.6 → dùng thông tin đó để trả lời.
-    c. Nếu không có trong bộ nhớ → dùng các tools thủ tục (search_procedure, get_full_procedure_info, v.v.).
-    d. Nếu không có trong tools thủ tục → dùng web_search để tìm kiếm trên internet.
-    e. Sau khi trả lời bằng thông tin mới từ web_search → LUÔN gọi remember_answer để lưu Q&A vào bộ nhớ.
+    a. LUÔN gọi recall_from_memory với nội dung câu hỏi — kiểm tra bộ nhớ trước.
+    b. Nếu recall_from_memory có kết quả score ≥ 0.6 → dùng thông tin đó, không cần tìm thêm.
+    c. Nếu không có trong bộ nhớ → gọi search_procedure để tìm trong 12 thủ tục sẵn có.
+    d. Nếu search_procedure không tìm thấy → PHẢI gọi web_search, KHÔNG được tự trả lời từ kiến thức LLM.
+    e. Sau khi trả lời bằng thông tin từ web_search → LUÔN gọi remember_answer để lưu vào bộ nhớ.
 12. Cuối MỖI câu trả lời (kể cả câu hỏi làm rõ), thêm đúng một dòng theo định dạng sau, không thêm bất kỳ ký tự nào khác:
 [GỢI Ý]: <câu hỏi 1> | <câu hỏi 2> | <câu hỏi 3>
 Yêu cầu: 2-3 gợi ý, mỗi gợi ý liên quan trực tiếp đến thủ tục hành chính, không quá 60 ký tự, viết dưới dạng câu hỏi ngắn gọn."""
