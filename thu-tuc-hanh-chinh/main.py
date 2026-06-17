@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import asyncio
 from pathlib import Path
 from datetime import datetime
 
@@ -10,6 +11,9 @@ from langchain.agents import create_agent
 from langchain_core.tools import tool
 from starlette.requests import Request
 from starlette.responses import HTMLResponse
+from duckduckgo_search import DDGS
+from greennode_agentbase.memory import MemoryClient
+from greennode_agentbase.memory.models import MemoryRecordSearchRequest
 
 from greennode_agentbase import (
     GreenNodeAgentBaseApp,
@@ -20,6 +24,17 @@ from greennode_agentbase import (
 load_dotenv()
 
 app = GreenNodeAgentBaseApp()
+
+# --- Memory Configuration ---
+MEMORY_ID = os.environ.get("AGENTBASE_MEMORY_ID", "")
+MEMORY_STRATEGY_ID = os.environ.get("MEMORY_STRATEGY_ID", "")
+_SHARED_ACTOR = "shared"
+memory_client = MemoryClient() if MEMORY_ID else None
+
+
+def _memory_namespace() -> str:
+    return f"/strategies/{MEMORY_STRATEGY_ID}/actors/{_SHARED_ACTOR}"
+
 
 # --- LLM Configuration ---
 LLM_MODEL = os.environ.get("LLM_MODEL", "")
@@ -193,6 +208,79 @@ def get_full_procedure_info(procedure_id: str) -> str:
     )
 
 
+# --- Memory & Web Search Tools ---
+
+@tool
+def recall_from_memory(query: str) -> str:
+    """Tìm kiếm trong bộ nhớ dài hạn các câu hỏi và câu trả lời đã được lưu trước đó.
+    Gọi tool này ĐẦU TIÊN trước khi trả lời bất kỳ câu hỏi nào.
+
+    Args:
+        query: Nội dung câu hỏi cần tìm trong bộ nhớ.
+    """
+    if not memory_client or not MEMORY_ID or not MEMORY_STRATEGY_ID:
+        return "Memory chưa được cấu hình."
+    try:
+        results = asyncio.run(
+            memory_client.search_memory_records_async(
+                id=MEMORY_ID,
+                namespace=_memory_namespace(),
+                request=MemoryRecordSearchRequest(query=query, limit=5, scoreThreshold=0.55),
+            )
+        )
+        if not results:
+            return "Không tìm thấy thông tin liên quan trong bộ nhớ."
+        return "\n".join(f"- [{r.score:.2f}] {r.memory}" for r in results)
+    except Exception as e:
+        return f"Lỗi khi truy xuất bộ nhớ: {str(e)}"
+
+
+@tool
+def web_search(query: str) -> str:
+    """Tìm kiếm thông tin trên internet khi câu hỏi không có trong dữ liệu sẵn có và bộ nhớ.
+    Dùng khi câu hỏi về thủ tục hành chính không thuộc 12 thủ tục đã biết.
+
+    Args:
+        query: Từ khóa tìm kiếm tiếng Việt, nên thêm 'thủ tục hành chính' vào query.
+    """
+    try:
+        with DDGS() as ddgs:
+            results = list(ddgs.text(query, max_results=5, region="vn-vi"))
+        if not results:
+            return "Không tìm thấy kết quả tìm kiếm."
+        output = []
+        for r in results:
+            output.append(f"**{r['title']}**\n{r['body']}\nNguồn: {r['href']}")
+        return "\n\n".join(output)
+    except Exception as e:
+        return f"Lỗi khi tìm kiếm: {str(e)}"
+
+
+@tool
+def remember_answer(question: str, answer: str) -> str:
+    """Lưu câu hỏi và câu trả lời mới vào bộ nhớ dài hạn để dùng cho các lần sau.
+    Gọi tool này SAU KHI đã trả lời xong bằng thông tin từ web_search.
+
+    Args:
+        question: Câu hỏi của người dùng.
+        answer: Câu trả lời đầy đủ đã cung cấp cho người dùng.
+    """
+    if not memory_client or not MEMORY_ID or not MEMORY_STRATEGY_ID:
+        return "Memory chưa được cấu hình."
+    try:
+        fact = f"Câu hỏi: {question}\nCâu trả lời: {answer}"
+        asyncio.run(
+            memory_client.insert_memory_records_directly_async(
+                id=MEMORY_ID,
+                namespace=_memory_namespace(),
+                request=[fact],
+            )
+        )
+        return "Đã lưu vào bộ nhớ thành công."
+    except Exception as e:
+        return f"Lỗi khi lưu vào bộ nhớ: {str(e)}"
+
+
 # --- System prompt ---
 SYSTEM_PROMPT = """Bạn là trợ lý tra cứu thủ tục hành chính Việt Nam, hỗ trợ người dân tìm hiểu:
 - Hồ sơ cần chuẩn bị gồm những gì
@@ -221,7 +309,13 @@ Quy tắc:
 "Tôi không thể trả lời câu hỏi này vì không nằm trong phạm vi hỗ trợ, hãy liên hệ với chủ nhân của tôi.
 Phone : 0938432601
 Email : khoana10@vng.com.vn"
-11. Cuối MỖI câu trả lời (kể cả câu hỏi làm rõ), thêm đúng một dòng theo định dạng sau, không thêm bất kỳ ký tự nào khác:
+11. QUY TRÌNH XỬ LÝ MỖI CÂU HỎI (bắt buộc theo thứ tự):
+    a. LUÔN gọi recall_from_memory với nội dung câu hỏi — để kiểm tra bộ nhớ có câu trả lời phù hợp không.
+    b. Nếu recall_from_memory trả về kết quả có score ≥ 0.6 → dùng thông tin đó để trả lời.
+    c. Nếu không có trong bộ nhớ → dùng các tools thủ tục (search_procedure, get_full_procedure_info, v.v.).
+    d. Nếu không có trong tools thủ tục → dùng web_search để tìm kiếm trên internet.
+    e. Sau khi trả lời bằng thông tin mới từ web_search → LUÔN gọi remember_answer để lưu Q&A vào bộ nhớ.
+12. Cuối MỖI câu trả lời (kể cả câu hỏi làm rõ), thêm đúng một dòng theo định dạng sau, không thêm bất kỳ ký tự nào khác:
 [GỢI Ý]: <câu hỏi 1> | <câu hỏi 2> | <câu hỏi 3>
 Yêu cầu: 2-3 gợi ý, mỗi gợi ý liên quan trực tiếp đến thủ tục hành chính, không quá 60 ký tự, viết dưới dạng câu hỏi ngắn gọn."""
 
@@ -229,6 +323,9 @@ Yêu cầu: 2-3 gợi ý, mỗi gợi ý liên quan trực tiếp đến thủ t
 agent = create_agent(
     llm,
     tools=[
+        recall_from_memory,
+        web_search,
+        remember_answer,
         search_procedure,
         get_procedure_documents,
         get_submission_location,
