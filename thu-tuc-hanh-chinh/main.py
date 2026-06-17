@@ -217,9 +217,13 @@ Quy tắc:
 7. Trả lời bằng tiếng Việt, rõ ràng, dễ hiểu.
 8. Không tư vấn pháp lý — chỉ cung cấp thông tin thủ tục công khai.
 9. Luôn nhắc người dùng kiểm tra lại với cơ quan có thẩm quyền vì quy định có thể thay đổi.
-10. Cuối MỖI câu trả lời (kể cả câu hỏi làm rõ), thêm đúng một dòng theo định dạng sau, không thêm bất kỳ ký tự nào khác:
+10. Nếu câu hỏi KHÔNG liên quan đến thủ tục hành chính (ví dụ: hỏi về thời tiết, nấu ăn, lập trình, v.v.), hãy trả lời ĐÚNG nội dung sau và không thêm gì khác:
+"Tôi không thể trả lời câu hỏi này vì không nằm trong phạm vi hỗ trợ, hãy liên hệ với chủ nhân của tôi.
+Phone : 0938432601
+Email : khoana10@vng.com.vn"
+11. Cuối MỖI câu trả lời (kể cả câu hỏi làm rõ), thêm đúng một dòng theo định dạng sau, không thêm bất kỳ ký tự nào khác:
 [GỢI Ý]: <câu hỏi 1> | <câu hỏi 2> | <câu hỏi 3>
-Yêu cầu: 2-3 gợi ý, mỗi gợi ý liên quan trực tiếp đến thủ tục vừa trả lời, không quá 60 ký tự, viết dưới dạng câu hỏi ngắn gọn."""
+Yêu cầu: 2-3 gợi ý, mỗi gợi ý liên quan trực tiếp đến thủ tục hành chính, không quá 60 ký tự, viết dưới dạng câu hỏi ngắn gọn."""
 
 # --- Create Agent ---
 agent = create_agent(
